@@ -2083,6 +2083,8 @@ Java_org_cef_browser_CefBrowser_1N_N_1SendKeyEvent(JNIEnv* env,
   } else if (event_type == JNI_STATIC(KEY_TYPE)) {
 #if defined(OS_WIN)
     cef_event.windows_key_code = key_char;
+    cef_event.character = key_char;
+    cef_event.unmodified_character = key_char;
 #endif
     cef_event.type = KEYEVENT_CHAR;
   } else {
